@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "492241941773",
+    "project_id": "smartpost-3eb73",
+    "storage_bucket": "smartpost-3eb73.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:492241941773:android:192512672b8ee69c21ac44",
+        "android_client_info": {
+          "package_name": "com.example.makersproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "492241941773-rsdk3ia6cfuqgmsg8e1rq2gre3chqibt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.makersproject",
+            "certificate_hash": "bf9be85f62a7a00e9d78febd6238a83a4d828609"
+          }
+        },
+        {
+          "client_id": "492241941773-j5437ngp4ssejm76mnrmegcdqp7tgoga.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0r7FdAmMVY1gWHh_M5HZnhOLpJARwu_E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "492241941773-j5437ngp4ssejm76mnrmegcdqp7tgoga.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

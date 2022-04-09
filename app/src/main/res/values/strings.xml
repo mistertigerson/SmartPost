@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">SmartPost</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="web_client">492241941773-j5437ngp4ssejm76mnrmegcdqp7tgoga.apps.googleusercontent.com</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="signIn">Войти</string>
+    <string name="mail">почта</string>
+    <string name="Password_rus">пароль</string>
+    <string name="forget_password">Зыбыли пароль</string>
+    <string name="vosstanovit">Восстановить</string>
+    <string name="or">или</string>
+    <string name="registration">Регистрация</string>
+    <string name="tv_ewe_ne_zareg">Еще не зарегистрированы?</string>
+    <string name="registration_rus">Регистрация</string>
+    <string name="mail_rus">почта</string>
+    <string name="cannot_registrated_rus">не удалось зарегестрироваться</string>
+    <string name="send_email_verification_rus">На вашу почту отправлена ссылка для подтверждения!</string>
+    <string name="cannot_send_email_verification_rus">Не удалось отправить ссылку для подтверждения на почту</string>
+    <string name="waiting_verify_rus">ожидание на подтверждение</string>
+    <string name="send_again_rus">отправить повторно</string>
+    <string name="_30">30</string>
+    <string name="resend">отправить повторно</string>
+</resources>
