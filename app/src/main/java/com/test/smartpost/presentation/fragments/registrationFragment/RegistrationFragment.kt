@@ -9,7 +9,6 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
@@ -69,13 +68,11 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration) {
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     val user = App.fbAuth.currentUser
-                    updateUI(user)
                 } else {
                     Toast.makeText(
                         requireContext(),
                         "AuthError ", Toast.LENGTH_SHORT
                     ).show()
-                    updateUI(null)
                 }
             }
     }
@@ -186,12 +183,6 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration) {
     override fun onStart() {
         super.onStart()
         val currentUser = App.fbAuth.currentUser
-        updateUI(currentUser)
-    }
-
-    // disable/enable buttons or set visibility
-    private fun updateUI(user: FirebaseUser?) {
-
     }
 
     private fun verifyCheck() {
@@ -204,8 +195,7 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration) {
 
 
     private fun close() {
-        val navController = findNavController()
-        navController.navigate(R.id.authFragment)
+        findNavController().navigate(R.id.authFragment)
     }
 
 }

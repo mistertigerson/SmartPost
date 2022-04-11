@@ -20,4 +20,6 @@
     <string name="send_again_rus">отправить повторно</string>
     <string name="_30">30</string>
     <string name="resend">отправить повторно</string>
+    <string name="buy">купить</string>
+    <string name="detail_rus">подробнее</string>
 </resources>

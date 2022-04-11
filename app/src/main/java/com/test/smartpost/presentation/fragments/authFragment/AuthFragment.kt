@@ -50,10 +50,12 @@ class AuthFragment : Fragment(R.layout.fragment_auth) {
         super.onViewCreated(view, savedInstanceState)
         initGmail()
         initEditText()
-        resetPassword()
 
         binding.tvRegistrationSignIn.setOnClickListener {
             findNavController().navigate(R.id.registrationFragment)
+        }
+        binding.tvRecover.setOnClickListener{
+            resetPassword()
         }
         binding.btnGmailInSign.setOnClickListener {
             gmailSignIn()
@@ -64,7 +66,7 @@ class AuthFragment : Fragment(R.layout.fragment_auth) {
         binding.tvRecover.setOnClickListener {
             val builder = AlertDialog.Builder(requireContext())
             builder.setTitle("Forgot password")
-            val dialogView = layoutInflater.inflate(R.layout.item_waiting_dialog, null)
+            val dialogView = layoutInflater.inflate(R.layout.fragment_dialog, null)
             builder.setView(dialogView)
             dialogView.findViewById<Button>(R.id.btnSendLink).setOnClickListener {
                 forgetPassword(dialogView.findViewById<EditText>(R.id.etPasswordEmail))

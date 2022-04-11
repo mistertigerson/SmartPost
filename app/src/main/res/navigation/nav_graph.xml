@@ -18,7 +18,11 @@
         android:id="@+id/registrationFragment"
         android:name="com.test.smartpost.presentation.fragments.registrationFragment.RegistrationFragment"
         android:label="fragment_registration"
-        tools:layout="@layout/fragment_registration" />
+        tools:layout="@layout/fragment_registration" >
+        <action
+            android:id="@+id/action_registrationFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
     <fragment
         android:id="@+id/educationFragment"
         android:name="com.test.smartpost.presentation.fragments.educationFragment.EducationFragment"
@@ -28,7 +32,11 @@
         android:id="@+id/mainFragment"
         android:name="com.test.smartpost.presentation.fragments.mainFragment.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/personalFragment"
         android:name="com.test.smartpost.presentation.fragments.personalFragment.PersonalFragment"
@@ -39,4 +47,13 @@
         android:name="com.test.smartpost.presentation.fragments.searchFragment.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.test.smartpost.presentation.fragments.detailsFragment.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="model"
+            app:argType="com.test.smartpost.presentation.models.MainModel" />
+    </fragment>
 </navigation>
