@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.test.smartpost.databinding.MainItemBinding
-import com.test.smartpost.presentation.models.MainModel
+import com.test.smartpost.data.models.MainModel
 import kotlin.properties.Delegates
 
 class MainAdapter(private val clickOnPlaylist: ClickOnPlaylist) :
@@ -29,8 +29,6 @@ class MainAdapter(private val clickOnPlaylist: ClickOnPlaylist) :
 
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
         holder.onBind(list[position])
-        pos = holder.absoluteAdapterPosition
-
     }
 
     override fun getItemCount(): Int {
@@ -39,17 +37,19 @@ class MainAdapter(private val clickOnPlaylist: ClickOnPlaylist) :
 
     inner class MainViewHolder(itemView: MainItemBinding) : RecyclerView.ViewHolder(itemView.root) {
         fun onBind(mainModel: MainModel) {
+
             binding.ivIcon.setImageResource(mainModel.imageIcon)
             binding.tvComments.text = mainModel.comments
             binding.tvNameOfAuthor.text = mainModel.NameOfAuthor
             binding.tvTitle.text = mainModel.title
 
             binding.root.setOnClickListener {
-                clickOnPlaylist.onClick(mainModel, pos)
+                clickOnPlaylist.onClick(mainModel, absoluteAdapterPosition)
             }
             binding.btnBuy.setOnClickListener {
                 clickOnPlaylist.clickBtn()
             }
+
 
         }
 

@@ -11,7 +11,7 @@ import com.test.smartpost.databinding.FragmentDetailsBinding
 
 class DetailsFragment : Fragment(R.layout.fragment_details) {
     private val binding: FragmentDetailsBinding by viewBinding()
-    val args : DetailsFragmentArgs by navArgs()
+    private val args : DetailsFragmentArgs by navArgs()
 
 
 

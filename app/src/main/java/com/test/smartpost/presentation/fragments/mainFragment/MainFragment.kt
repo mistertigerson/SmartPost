@@ -2,14 +2,12 @@ package com.test.smartpost.presentation.fragments.mainFragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.test.smartpost.R
 import com.test.smartpost.databinding.FragmentMainBinding
-import com.test.smartpost.presentation.models.MainModel
+import com.test.smartpost.data.models.MainModel
 
 
 class MainFragment : Fragment(R.layout.fragment_main) {
@@ -37,7 +35,6 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                         list[position]
                     )
                 )
-
             }
 
             override fun clickBtn() {
@@ -54,7 +51,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     //создание модельки и добавление в лист
     private fun createModel() {
         mainModel = MainModel(
-            R.drawable.ic_launcher_background,
+            androidx.appcompat.R.drawable.btn_checkbox_checked_mtrl,
             "Java",
             "Macconey",
             "the best course"
@@ -68,7 +65,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         )
         list.add(mainModel)
         mainModel = MainModel(
-            R.drawable.ic_launcher_background,
+            androidx.appcompat.R.drawable.abc_item_background_holo_light,
             "CSharp",
             "Macconey",
             "the best course"

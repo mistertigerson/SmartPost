@@ -1,4 +1,4 @@
-package com.test.smartpost.presentation.models
+package com.test.smartpost.data.models
 
 import java.io.Serializable
 
