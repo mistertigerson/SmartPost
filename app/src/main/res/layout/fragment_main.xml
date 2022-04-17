@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".presentation.fragments.mainFragment.MainFragment">
 
+<!--    <TextView-->
+<!--        android:id="@+id/text"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textSize="25sp"-->
+<!--        android:text="@string/buy"-->
+<!--        android:textAlignment="center"-->
+<!--        />-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_main"
         android:layout_width="match_parent"

@@ -38,10 +38,10 @@ class MainAdapter(private val clickOnPlaylist: ClickOnPlaylist) :
     inner class MainViewHolder(itemView: MainItemBinding) : RecyclerView.ViewHolder(itemView.root) {
         fun onBind(mainModel: MainModel) {
 
-            binding.ivIcon.setImageResource(mainModel.imageIcon)
-            binding.tvComments.text = mainModel.comments
-            binding.tvNameOfAuthor.text = mainModel.NameOfAuthor
-            binding.tvTitle.text = mainModel.title
+//            binding.ivIcon.setImageResource(mainModel.imageIcon)
+            binding.tvComments.text = mainModel.comment
+            binding.tvNameOfAuthor.text = mainModel.nameOfAuthor
+            binding.tvTitle.text = mainModel.nameOfCourse
 
             binding.root.setOnClickListener {
                 clickOnPlaylist.onClick(mainModel, absoluteAdapterPosition)

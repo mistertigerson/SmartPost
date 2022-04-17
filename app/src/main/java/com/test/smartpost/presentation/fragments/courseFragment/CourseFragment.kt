@@ -2,6 +2,7 @@ package com.test.smartpost.presentation.fragments.courseFragment
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -19,7 +20,6 @@ class CourseFragment : Fragment(R.layout.fragment_course) {
 
         binding.btnCreate.setOnClickListener{
             initDb()
-            findNavController().navigate(R.id.action_courseFragment_to_personalFragment)
         }
     }
 
@@ -33,6 +33,13 @@ class CourseFragment : Fragment(R.layout.fragment_course) {
 
         db.collection("course")
             .add(course)
+            .addOnSuccessListener {
+                Toast.makeText(requireContext(), "success", Toast.LENGTH_SHORT).show()
+                findNavController().navigate(R.id.action_courseFragment_to_personalFragment)
+            }
+            .addOnFailureListener {
+                Toast.makeText(requireContext(), "fail", Toast.LENGTH_SHORT).show()
+            }
 
     }
 
