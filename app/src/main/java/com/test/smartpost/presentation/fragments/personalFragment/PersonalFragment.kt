@@ -21,6 +21,9 @@ class PersonalFragment : Fragment(R.layout.fragment_personal) {
         binding.btnEdit.setOnClickListener {
             findNavController().navigate(R.id.action_personalFragment_to_editPersonalFragment)
         }
+        binding.tvAddCourse.setOnClickListener{
+            findNavController().navigate(R.id.action_personalFragment_to_courseFragment)
+        }
 
     }
 }

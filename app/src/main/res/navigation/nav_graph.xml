@@ -45,6 +45,10 @@
         <action
             android:id="@+id/action_personalFragment_to_editPersonalFragment"
             app:destination="@id/editPersonalFragment" />
+        <action
+            android:id="@+id/action_personalFragment_to_courseFragment"
+            app:destination="@id/courseFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
@@ -65,4 +69,13 @@
         android:name="com.test.smartpost.presentation.fragments.personalFragment.EditPersonalFragment"
         android:label="fragment_edit_personal"
         tools:layout="@layout/fragment_edit_personal" />
+    <fragment
+        android:id="@+id/courseFragment"
+        android:name="com.test.smartpost.presentation.fragments.courseFragment.CourseFragment"
+        android:label="fragment_course"
+        tools:layout="@layout/fragment_course" >
+        <action
+            android:id="@+id/action_courseFragment_to_personalFragment"
+            app:destination="@id/personalFragment" />
+    </fragment>
 </navigation>

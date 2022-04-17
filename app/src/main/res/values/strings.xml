@@ -44,4 +44,6 @@
     <string name="et_add_experience_rus">Стаж</string>
     <string name="btn_save_data_rus">Сохранить</string>
     <string name="et_add_name_error_rus">заполните поле пожалуйста</string>
+    <string name="addCourse">Создание курса</string>
+    <string name="create">создать</string>
 </resources>

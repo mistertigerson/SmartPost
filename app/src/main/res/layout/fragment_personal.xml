@@ -91,7 +91,7 @@
         android:layout_marginTop="15dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="15dp"
-        android:backgroundTint="#FFE500"
+        android:backgroundTint="@color/Title"
         android:text="@string/btn_edit_rus"
         android:textColor="@color/black"
         app:cornerRadius="15dp" />
@@ -166,7 +166,7 @@
             app:cardMaxElevation="15dp">
 
             <TextView
-                android:id="@+id/tvCardCourse"
+                android:id="@+id/tvAllCourse"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
@@ -188,7 +188,7 @@
             app:cardMaxElevation="15dp">
 
             <TextView
-                android:id="@+id/tvAddCardCourse"
+                android:id="@+id/tvAddCourse"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
