@@ -36,6 +36,9 @@
         <action
             android:id="@+id/action_mainFragment_to_detailsFragment"
             app:destination="@id/detailsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
     </fragment>
     <fragment
         android:id="@+id/personalFragment"
@@ -61,8 +64,8 @@
         android:label="fragment_details"
         tools:layout="@layout/fragment_details" >
         <argument
-            android:name="model"
-            app:argType="com.test.smartpost.data.models.MainModel" />
+            android:name="courseModel"
+            app:argType="com.test.smartpost.domain.main.model.CourseModel" />
     </fragment>
     <fragment
         android:id="@+id/editPersonalFragment"

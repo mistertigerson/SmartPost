@@ -23,8 +23,8 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
 
     private fun initView() {
 //        binding.ivIcon.setImageResource(args.model.imageIcon)
-        binding.tvComments.text = args.model.comment
-        binding.tvTitle.text = args.model.nameOfCourse
-        binding.tvNameOfAuthor.text = args.model.nameOfAuthor
+        binding.tvComments.text = args.courseModel.description
+        binding.tvTitle.text = args.courseModel.nameOfCourse
+        binding.tvNameOfAuthor.text = args.courseModel.nameOfAuthor
     }
 }

@@ -3,61 +3,47 @@ package com.test.smartpost.presentation.fragments.mainFragment
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.test.smartpost.databinding.MainItemBinding
-import com.test.smartpost.data.models.MainModel
+import com.test.smartpost.domain.main.model.CourseModel
 import kotlin.properties.Delegates
 
-class MainAdapter(private val clickOnPlaylist: ClickOnPlaylist) :
-    RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
+class MainAdapter :
+    ListAdapter<CourseModel, MainAdapter.MainViewHolder>(MainDiffUtil()) {
 
-    private lateinit var binding: MainItemBinding
-    private val list: ArrayList<MainModel> = arrayListOf()
-    var pos by Delegates.notNull<Int>()
-
-
-    @SuppressLint("NotifyDataSetChanged")
-    fun setList(list: ArrayList<MainModel>) {
-        this.list.addAll(list)
-        notifyDataSetChanged()
-    }
+    var onItemClick: ((CourseModel) -> Unit)? = null
+    var onItemClick2: ((CourseModel) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
-        binding = MainItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return MainViewHolder(binding)
+        return MainViewHolder(
+            MainItemBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        )
     }
 
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
-        holder.onBind(list[position])
+        holder.onBind(getItem(position))
     }
 
-    override fun getItemCount(): Int {
-        return list.size
-    }
+    inner class MainViewHolder(private val binding: MainItemBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun onBind(courseModel: CourseModel) {
 
-    inner class MainViewHolder(itemView: MainItemBinding) : RecyclerView.ViewHolder(itemView.root) {
-        fun onBind(mainModel: MainModel) {
-
-//            binding.ivIcon.setImageResource(mainModel.imageIcon)
-            binding.tvComments.text = mainModel.comment
-            binding.tvNameOfAuthor.text = mainModel.nameOfAuthor
-            binding.tvTitle.text = mainModel.nameOfCourse
+            binding.tvComments.text = courseModel.description
+            binding.tvNameOfAuthor.text = courseModel.nameOfAuthor
+            binding.tvTitle.text = courseModel.nameOfCourse
 
             binding.root.setOnClickListener {
-                clickOnPlaylist.onClick(mainModel, absoluteAdapterPosition)
+                onItemClick?.invoke(getItem(absoluteAdapterPosition))
             }
-            binding.btnBuy.setOnClickListener {
-                clickOnPlaylist.clickBtn()
+            binding.btnBuy.setOnClickListener{
+                onItemClick2?.invoke(getItem(absoluteAdapterPosition))
             }
-
-
         }
 
     }
 
-
-    interface ClickOnPlaylist {
-        fun onClick(model: MainModel, position: Int)
-        fun clickBtn()
-    }
 }

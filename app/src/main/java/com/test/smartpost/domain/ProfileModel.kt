@@ -1,4 +1,4 @@
-package com.test.smartpost.data.models
+package com.test.smartpost.domain
 
 data class ProfileModel(
     val image: Int? = null,

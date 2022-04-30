@@ -8,39 +8,102 @@
 
 
     <TextView
+        style="@style/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/addCourse"
-        style="@style/title"
-        />
+        android:text="@string/addCourse" />
+
     <EditText
         android:id="@+id/et_nameOfCourse"
+        style="@style/edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/edit"
-        android:hint="введите название курса"
-        />
+        android:hint="введите название курса" />
+
+
     <EditText
         android:id="@+id/et_nameOfAuthor"
+        style="@style/edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/edit"
-        android:hint="введите имя автора"
-        />
+        android:hint="введите имя автора" />
     <EditText
-        android:id="@+id/et_comments"
+        android:id="@+id/et_description"
+        style="@style/edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="введите описание" />
+
+    <EditText
+        android:id="@+id/et_profession"
         style="@style/edit"
-        android:hint="введите комментарий"
-        />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="введите профессию" />
+
+    <EditText
+        android:id="@+id/et_information"
+        style="@style/edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="введите платную информацию" />
+
+    <EditText
+        android:id="@+id/et_informationFree"
+        style="@style/edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="введите бесплатную информацию" />
+
+    <EditText
+        android:id="@+id/et_image"
+        style="@style/edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="введите ссылку картинки" />
+
+    <EditText
+        android:id="@+id/et_youtube"
+        style="@style/edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="введите ссылку на курс с ютуба" />
+
+    <EditText
+        android:id="@+id/et_lecture"
+        style="@style/edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="введите текст лекции" />
+
+    <EditText
+        android:id="@+id/et_homework"
+        style="@style/edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="введите домашнее задание" />
+
+    <EditText
+        android:id="@+id/et_test"
+        style="@style/edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="введите тесты" />
+
+    <EditText
+        android:id="@+id/et_price"
+        style="@style/edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="введите стоимость" />
+
 
 
     <Button
         android:id="@+id/btnCreate"
-        android:layout_gravity="center_horizontal"
-        android:layout_height="wrap_content"
         style="@style/button"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:text="@string/create"
 
         />

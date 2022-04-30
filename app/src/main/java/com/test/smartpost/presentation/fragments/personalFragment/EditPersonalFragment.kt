@@ -1,9 +1,7 @@
 package com.test.smartpost.presentation.fragments.personalFragment
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -11,7 +9,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.test.smartpost.R
-import com.test.smartpost.data.models.ProfileModel
+import com.test.smartpost.domain.ProfileModel
 import com.test.smartpost.databinding.FragmentEditPersonalBinding
 
 
