@@ -53,7 +53,7 @@ class PersonalFragment : Fragment(R.layout.fragment_personal) {
 //            )
 
 
-        personalModel2 = arguments?.getSerializable("sex") as PersonalModel
+        personalModel2 = arguments?.getSerializable("real") as PersonalModel
         binding.tvProfession.text = personalModel2.experience
         binding.tvCarrier.text = personalModel2.etCareerDescription
         binding.tvEmail.text = personalModel2.email

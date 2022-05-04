@@ -123,7 +123,7 @@ class SecondRegistrationFragment : Fragment(R.layout.fragment_second_registrario
             email = user?.email.toString(),
             )
         val bundle = Bundle()
-        bundle.putSerializable("sex", personalModel)
+        bundle.putSerializable("real", personalModel)
         val db = FirebaseFirestore.getInstance()
         db.collection("personal")
             .add(personalModel)
