@@ -27,7 +27,7 @@
     <string name="tv_data_experience_rus">5 лет</string>
     <string name="tv_experience_rus">стаж</string>
     <string name="tv_education_rus">образование</string>
-    <string name="tv_contact_rus">контакты</string>
+    <string name="tv_email_rus">почта</string>
     <string name="tv_city_rus">город</string>
     <string name="tv_speciality_rus">Введите специальность</string>
     <string name="tv_title_rus">Введите имя</string>
@@ -46,4 +46,12 @@
     <string name="et_add_name_error_rus">заполните поле пожалуйста</string>
     <string name="addCourse">Создание курса</string>
     <string name="create">создать</string>
+    <string name="fill_in_rus">заполните поля</string>
+    <string name="choose_profession_rus">выбор профессии</string>
+    <string name="experience_rus">стаж работы</string>
+    <string name="add_img_rus">Фото</string>
+    <string name="career_desc_rus">краткая информация о карьере</string>
+    <string name="add_certificate_and_diploms_photo_rus">добавьте фото сертификатов и дипломов</string>
+    <string name="add_photo_rus">Добавить фото</string>
+    <string name="save">сохранить</string>
 </resources>

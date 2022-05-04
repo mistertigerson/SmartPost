@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
 
     )
 
+    //проверка на то что есть такой юзер или нет
     override fun onStart() {
         super.onStart()
         val auth = FirebaseAuth.getInstance()
@@ -41,13 +42,11 @@ class MainActivity : AppCompatActivity() {
         initNavController()
     }
 
+    //инициализация навКонтроллера
     private fun initNavController() {
-
         val navHostController = supportFragmentManager.findFragmentById(R.id.navHostFragment)
         navController = navHostController!!.findNavController()
         binding.bottomNav.setupWithNavController(navController)
-
-        //проверка на то что есть такой юзер или нет
 
 
         //скрыть bottomNavigation
@@ -57,6 +56,7 @@ class MainActivity : AppCompatActivity() {
             } else binding.bottomNav.visibility = View.GONE
         }
     }
+
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp()

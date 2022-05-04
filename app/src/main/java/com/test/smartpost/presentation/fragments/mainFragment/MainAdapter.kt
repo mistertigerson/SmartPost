@@ -1,13 +1,12 @@
 package com.test.smartpost.presentation.fragments.mainFragment
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.test.smartpost.databinding.MainItemBinding
-import com.test.smartpost.domain.main.model.CourseModel
-import kotlin.properties.Delegates
+import com.test.smartpost.domain.mainAndCourse.model.CourseModel
+import com.test.smartpost.extensions.loadImage
 
 class MainAdapter :
     ListAdapter<CourseModel, MainAdapter.MainViewHolder>(MainDiffUtil()) {
@@ -35,6 +34,7 @@ class MainAdapter :
             binding.tvComments.text = courseModel.description
             binding.tvNameOfAuthor.text = courseModel.nameOfAuthor
             binding.tvTitle.text = courseModel.nameOfCourse
+            binding.ivIcon.loadImage(courseModel.image.toString())
 
             binding.root.setOnClickListener {
                 onItemClick?.invoke(getItem(absoluteAdapterPosition))

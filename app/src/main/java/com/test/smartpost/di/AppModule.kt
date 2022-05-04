@@ -3,8 +3,10 @@ package com.test.smartpost.di
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
+import com.test.smartpost.data.AddCourseRepositoryImpl
 import com.test.smartpost.data.MainRepositoryImpl
-import com.test.smartpost.domain.main.repository.MainRepository
+import com.test.smartpost.domain.mainAndCourse.repository.AddCourseRepository
+import com.test.smartpost.domain.mainAndCourse.repository.MainRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -32,5 +34,10 @@ class AppModule {
     //Провайд репозитория
     @Provides
     @Singleton
-    fun provideRepository(courseQuery: Query): MainRepository = MainRepositoryImpl(courseQuery)
+    fun provideMainRepository(courseQuery: Query): MainRepository = MainRepositoryImpl(courseQuery)
+
+
+    @Provides
+    @Singleton
+    fun provideCourseRepository() : AddCourseRepository = AddCourseRepositoryImpl()
 }

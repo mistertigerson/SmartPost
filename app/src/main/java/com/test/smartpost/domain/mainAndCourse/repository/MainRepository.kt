@@ -1,8 +1,7 @@
-package com.test.smartpost.domain.main.repository
+package com.test.smartpost.domain.mainAndCourse.repository
 
-import androidx.lifecycle.LiveData
 import com.test.smartpost.domain.Response
-import com.test.smartpost.domain.main.model.CourseModel
+import com.test.smartpost.domain.mainAndCourse.model.CourseModel
 import kotlinx.coroutines.flow.Flow
 
 interface MainRepository {

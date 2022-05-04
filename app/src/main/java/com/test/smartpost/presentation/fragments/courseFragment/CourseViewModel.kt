@@ -1,14 +1,23 @@
 package com.test.smartpost.presentation.fragments.courseFragment
 
+import android.content.Context
 import androidx.lifecycle.ViewModel
-import com.test.smartpost.data.MainRepositoryImpl
-import com.test.smartpost.domain.main.usecases.AddCourseModelUseCase
+import androidx.lifecycle.viewModelScope
+import androidx.navigation.NavController
+import com.test.smartpost.domain.mainAndCourse.model.CourseModel
+import com.test.smartpost.domain.mainAndCourse.usecases.AddCourseModelUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class CourseViewModel : ViewModel() {
+@HiltViewModel
+class CourseViewModel @Inject constructor(private val addCourseModelUseCase: AddCourseModelUseCase) :
+    ViewModel() {
 
-//    private val repository = MainRepositoryImpl
-//
-//    private val addCourseModelUseCase = AddCourseModelUseCase(repository)
-//
+    fun addCourseModel(courseModel: CourseModel, context : Context, findNavController: NavController) {
+        viewModelScope.launch {
+            addCourseModelUseCase.addCourseModel(courseModel, context, findNavController)
+        }
+    }
 
 }

@@ -7,6 +7,7 @@ import androidx.navigation.fragment.navArgs
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.test.smartpost.R
 import com.test.smartpost.databinding.FragmentDetailsBinding
+import com.test.smartpost.extensions.loadImage
 
 
 class DetailsFragment : Fragment(R.layout.fragment_details) {
@@ -22,9 +23,15 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
     }
 
     private fun initView() {
-//        binding.ivIcon.setImageResource(args.model.imageIcon)
-        binding.tvComments.text = args.courseModel.description
+        binding.tvDescription.text = args.courseModel.description
         binding.tvTitle.text = args.courseModel.nameOfCourse
         binding.tvNameOfAuthor.text = args.courseModel.nameOfAuthor
+        binding.ivIcon.loadImage(args.courseModel.image.toString())
+        binding.tvHomework.text = args.courseModel.homeWork
+        binding.tvLecture.text = args.courseModel.lecture
+        binding.tvYouTube.text = args.courseModel.videoFromYouTube
+        binding.tvProfession.text = args.courseModel.profession
+        binding.tvPrice.text = args.courseModel.price
+
     }
 }

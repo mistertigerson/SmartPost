@@ -28,65 +28,45 @@
         tools:ignore="RelativeOverlap" />
 
     <TextView
-        android:id="@+id/tvSpeciality"
+        android:id="@+id/tvEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvName"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="40dp"
-        android:text="@string/tv_speciality_rus"
-        android:textSize="15sp" />
-
-    <TextView
-        android:id="@+id/tvCity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvSpeciality"
         android:layout_marginStart="180dp"
         android:layout_marginTop="5dp"
-        android:text="@string/tv_city_rus"
+        android:text="@string/tv_email_rus"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/tvProfession"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvEmail"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/choose_profession_rus"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/tvCarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvProfession"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="5dp"
+        android:text="карьера"
         android:textColor="@color/black"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/tvContact"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvCity"
-        android:layout_marginStart="180dp"
-        android:layout_marginTop="5dp"
-        android:text="@string/tv_contact_rus"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/tvEducation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvContact"
-        android:layout_marginStart="180dp"
-        android:layout_marginTop="5dp"
-        android:text="@string/tv_education_rus"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/tvExperience"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvEducation"
-        android:layout_marginStart="180dp"
-        android:layout_marginTop="5dp"
-        android:text="@string/tv_experience_rus"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
+
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tvExperience"
+        android:layout_below="@id/ivAvatar"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="15dp"
@@ -96,49 +76,6 @@
         android:textColor="@color/black"
         app:cornerRadius="15dp" />
 
-    <TextView
-        android:id="@+id/tvDataCity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvSpeciality"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="15dp"
-        android:text="@string/tv_data_city_name_rus"
-        android:visibility="invisible" />
-
-    <TextView
-        android:id="@+id/tvDataContact"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvDataCity"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="15dp"
-        android:text="@string/tv_data_contact_rus"
-        android:visibility="invisible" />
-
-    <TextView
-        android:id="@+id/tvDataEducation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvDataContact"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="15dp"
-        android:text="@string/tv_data_education_rus"
-        android:visibility="invisible" />
-
-    <TextView
-        android:id="@+id/tvDataStatus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvDataEducation"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="15dp"
-        android:text="@string/tv_data_experience_rus"
-        android:visibility="invisible" />
 
     <View
         android:id="@+id/viewDivide"

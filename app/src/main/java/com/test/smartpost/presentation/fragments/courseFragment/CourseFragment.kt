@@ -3,27 +3,24 @@ package com.test.smartpost.presentation.fragments.courseFragment
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.android.gms.tasks.Task
-import com.google.firebase.firestore.DocumentReference
-import com.google.firebase.firestore.FirebaseFirestore
 import com.test.smartpost.R
 import com.test.smartpost.databinding.FragmentCourseBinding
-import com.test.smartpost.domain.main.model.CourseModel
+import com.test.smartpost.domain.mainAndCourse.model.CourseModel
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class CourseFragment : Fragment(R.layout.fragment_course) {
 
     private val binding: FragmentCourseBinding by viewBinding()
     private lateinit var course : CourseModel
+    private val viewModel : CourseViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding.btnCreate.setOnClickListener {
             initDb()
         }
@@ -45,17 +42,7 @@ class CourseFragment : Fragment(R.layout.fragment_course) {
             binding.etTest.text.toString(),
             binding.etPrice.text.toString(),
         )
-        val db = FirebaseFirestore.getInstance()
-        db.collection("course")
-            .add(course)
-            .addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    findNavController().navigate(R.id.action_courseFragment_to_personalFragment)
-                    Toast.makeText(requireContext(), "success", Toast.LENGTH_SHORT).show()
-                } else {
-                    Toast.makeText(requireContext(), "failure", Toast.LENGTH_SHORT).show()
-                }
-            }
+        viewModel.addCourseModel(course, requireContext(), findNavController())
 
     }
 

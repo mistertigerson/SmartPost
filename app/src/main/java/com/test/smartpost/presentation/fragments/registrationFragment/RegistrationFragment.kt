@@ -85,7 +85,7 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration) {
         if (it.resultCode == RESULT_OK) {
             Toast.makeText(context, "success", Toast.LENGTH_SHORT).show()
             val task = GoogleSignIn.getSignedInAccountFromIntent(it.data)
-            findNavController().navigate(R.id.mainFragment)
+            findNavController().navigate(R.id.secondRegistrationFragment)
             try {
                 val account = task.getResult(ApiException::class.java)!!
                 authWithGoogle(account.idToken!!)

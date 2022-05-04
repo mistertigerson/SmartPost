@@ -1,7 +1,6 @@
-package com.test.smartpost.domain.main.usecases
+package com.test.smartpost.domain.mainAndCourse.usecases
 
-import com.test.smartpost.domain.main.repository.MainRepository
-import com.test.smartpost.domain.main.model.CourseModel
+import com.test.smartpost.domain.mainAndCourse.repository.MainRepository
 
 class GetCourseModelUseCase(private val mainRepository: MainRepository) {
 
