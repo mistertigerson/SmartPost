@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/User/StudioProjects/SmartPost/app/src/main/res/layout/fragment_main.xml" value="0.24547101449275363" />
+        <entry key="..\:/Users/User/StudioProjects/SmartPost/app/src/main/res/layout/fragment_search.xml" value="0.2542991141219385" />
         <entry key="app/src/main/res/drawable-v24/ic_email.xml" value="0.1285" />
         <entry key="app/src/main/res/drawable-v24/ic_gmail.xml" value="0.1285" />
         <entry key="app/src/main/res/drawable/ic_account.xml" value="0.1285" />

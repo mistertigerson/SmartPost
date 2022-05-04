@@ -14,15 +14,15 @@ class MainAdapter :
     var onItemClick: ((CourseModel) -> Unit)? = null
     var onItemClick2: ((CourseModel) -> Unit)? = null
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
-        return MainViewHolder(
-            MainItemBinding.inflate(
-                LayoutInflater.from(parent.context),
-                parent,
-                false
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
+            return MainViewHolder(
+                MainItemBinding.inflate(
+                    LayoutInflater.from(parent.context),
+                    parent,
+                    false
+                )
             )
-        )
-    }
+        }
 
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
         holder.onBind(getItem(position))

@@ -53,13 +53,13 @@ class PersonalFragment : Fragment(R.layout.fragment_personal) {
 //            )
 
 
-        personalModel2 = arguments?.getSerializable("real") as PersonalModel
-        binding.tvProfession.text = personalModel2.experience
-        binding.tvCarrier.text = personalModel2.etCareerDescription
-        binding.tvEmail.text = personalModel2.email
-        binding.tvName.text = personalModel2.name
-        val user = FirebaseAuth.getInstance().currentUser
-        binding.ivAvatar.loadImage(user?.photoUrl.toString())
+//        personalModel2 = arguments?.getSerializable("real") as PersonalModel
+//        binding.tvProfession.text = personalModel2.experience
+//        binding.tvCarrier.text = personalModel2.etCareerDescription
+//        binding.tvEmail.text = personalModel2.email
+//        binding.tvName.text = personalModel2.name
+//        val user = FirebaseAuth.getInstance().currentUser
+//        binding.ivAvatar.loadImage(user?.photoUrl.toString())
 
 
     }
