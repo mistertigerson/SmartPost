@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -42,8 +43,8 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             )
         }
         adapter.onItemClick2 = {
-            findNavController().navigate(MainFragmentDirections.actionMainFragmentToRegistrationFragment())
-            Toast.makeText(requireContext(), "Siuuu", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "success", Toast.LENGTH_SHORT).show()
+
         }
     }
 
@@ -58,6 +59,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         lifecycleScope.launch {
             viewModel.getCourse.collectLatest {
                 adapter.submitList(it.data)
+                binding.progressBar.visibility = View.GONE
             }
         }
     }

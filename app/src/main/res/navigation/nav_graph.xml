@@ -30,7 +30,11 @@
         android:id="@+id/educationFragment"
         android:name="com.test.smartpost.presentation.fragments.educationFragment.EducationFragment"
         android:label="fragment_education"
-        tools:layout="@layout/fragment_education" />
+        tools:layout="@layout/fragment_education" >
+        <action
+            android:id="@+id/action_educationFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.test.smartpost.presentation.fragments.mainFragment.MainFragment"

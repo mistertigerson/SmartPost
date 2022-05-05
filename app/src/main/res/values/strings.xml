@@ -54,4 +54,5 @@
     <string name="add_certificate_and_diploms_photo_rus">добавьте фото сертификатов и дипломов</string>
     <string name="add_photo_rus">Добавить фото</string>
     <string name="save">сохранить</string>
+    <string name="createCourse">созданные курсы</string>
 </resources>

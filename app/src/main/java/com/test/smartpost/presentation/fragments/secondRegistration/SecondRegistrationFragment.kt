@@ -121,15 +121,17 @@ class SecondRegistrationFragment : Fragment(R.layout.fragment_second_registrario
             etCareerDescription = binding.etCareerDescription.text.toString(),
             name = user?.displayName,
             email = user?.email.toString(),
-            )
-        val bundle = Bundle()
-        bundle.putSerializable("real", personalModel)
+        )
         val db = FirebaseFirestore.getInstance()
         db.collection("personal")
             .add(personalModel)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    findNavController().navigate(R.id.personalFragment, bundle)
+                    findNavController().navigate(
+                        SecondRegistrationFragmentDirections.actionSecondRegistrationFragmentToPersonalFragment(
+                            personalModel
+                        )
+                    )
                     Toast.makeText(context, "success", Toast.LENGTH_SHORT).show()
                 } else {
                     Toast.makeText(context, "failure", Toast.LENGTH_SHORT).show()

@@ -1,7 +1,9 @@
 package com.test.smartpost.presentation.fragments.personalFragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -16,10 +18,9 @@ import com.test.smartpost.extensions.loadImage
 class PersonalFragment : Fragment(R.layout.fragment_personal) {
 
     private val binding: FragmentPersonalBinding by viewBinding()
-//    private val args: PersonalFragmentArgs by navArgs()
+    private val args: PersonalFragmentArgs by navArgs()
     private lateinit var personalModel: PersonalModel
     private lateinit var personalModel2: PersonalModel
-    private var i = 1
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -36,30 +37,17 @@ class PersonalFragment : Fragment(R.layout.fragment_personal) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-
-    }
 
     private fun initModel() {
-//            personalModel = PersonalModel(
-//                name = args.personalModel.name,
-//                email = args.personalModel.email,
-//                experience = args.personalModel.experience,
-//                etCareerDescription = args.personalModel.etCareerDescription
-//            )
-
-
-//        personalModel2 = arguments?.getSerializable("real") as PersonalModel
-//        binding.tvProfession.text = personalModel2.experience
-//        binding.tvCarrier.text = personalModel2.etCareerDescription
-//        binding.tvEmail.text = personalModel2.email
-//        binding.tvName.text = personalModel2.name
-//        val user = FirebaseAuth.getInstance().currentUser
-//        binding.ivAvatar.loadImage(user?.photoUrl.toString())
+        personalModel2 = args.personalModel.copy()
+        binding.tvProfession.text = personalModel2.experience
+        binding.tvCarrier.text = personalModel2.etCareerDescription
+        binding.tvEmail.text = personalModel2.email
+        binding.tvName.text = personalModel2.name
+        val user = FirebaseAuth.getInstance().currentUser
+        binding.ivAvatar.loadImage(user?.photoUrl.toString())
 
 
     }
