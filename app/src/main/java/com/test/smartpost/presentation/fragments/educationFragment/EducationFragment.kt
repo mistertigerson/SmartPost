@@ -26,8 +26,8 @@ class EducationFragment : Fragment(R.layout.fragment_education) {
 
     private val binding: FragmentEducationBinding by viewBinding()
     private val viewModel : EducationFragmentViewModel by viewModels()
-    private val adapter : MainAdapter by lazy {
-        MainAdapter()
+    private val adapter : EducationAdapter by lazy {
+        EducationAdapter()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
