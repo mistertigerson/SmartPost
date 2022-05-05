@@ -57,16 +57,4 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
-    override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp()
-    }
-
-    override fun onBackPressed() {
-        super.onBackPressed()
-        Log.e("TAG", "onBackPressed: ")
-        navController.navigate(R.id.mainFragment)
-
-
-    }
 }

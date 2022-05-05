@@ -10,7 +10,8 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class SecondRegisterViewModel @Inject constructor(private val repository : ImgRepositoryImpl) : ViewModel() {
+class SecondRegisterViewModel @Inject constructor(private val repository: ImgRepositoryImpl) :
+    ViewModel() {
 
     private val addImgUseCase = AddImgUseCase(repository)
 

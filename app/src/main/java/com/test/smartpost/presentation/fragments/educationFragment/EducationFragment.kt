@@ -2,21 +2,16 @@ package com.test.smartpost.presentation.fragments.educationFragment
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.viewModelScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.test.smartpost.R
 import com.test.smartpost.databinding.FragmentEducationBinding
-import com.test.smartpost.presentation.fragments.mainFragment.MainAdapter
-import com.test.smartpost.presentation.fragments.mainFragment.MainFragmentDirections
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -53,15 +48,15 @@ class EducationFragment : Fragment(R.layout.fragment_education) {
     private fun setUpObservers() {
         lifecycleScope.launch {
             viewModel.getCourse.collectLatest {
-                Log.e("TAG", "setUpObservers: ${it.data}", )
                 adapter.submitList(it.data)
+                Log.e("TAG", "setUpObservers: ${it.data}")
             }
         }
     }
 
     private fun initUI() {
         binding.rvEdu.apply {
-            adapter = this.adapter
+            adapter = this@EducationFragment.adapter
             layoutManager = LinearLayoutManager(context)
         }
     }

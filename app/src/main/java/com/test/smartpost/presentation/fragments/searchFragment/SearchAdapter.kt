@@ -5,22 +5,18 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
-import androidx.annotation.NonNull
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.test.smartpost.databinding.MainItemBinding
 import com.test.smartpost.domain.mainAndCourse.model.CourseModel
 import com.test.smartpost.extensions.loadImage
 
 open class SearchAdapter() :
-    RecyclerView.Adapter<SearchAdapter.CourseHolder>(), Filterable {
+    ListAdapter<CourseModel, SearchAdapter.CourseHolder>(SearchDiffUtil()), Filterable {
 
     var courseList: ArrayList<CourseModel> = ArrayList()
     var courseListFilter = ArrayList<CourseModel>()
-
-
-    init {
-        courseListFilter = courseList
-    }
 
 
     var onItemClick: ((CourseModel) -> Unit)? = null
@@ -37,8 +33,16 @@ open class SearchAdapter() :
         }
     }
 
+    class SearchDiffUtil : DiffUtil.ItemCallback<CourseModel>() {
+        override fun areItemsTheSame(oldItem: CourseModel, newItem: CourseModel): Boolean =
+            oldItem == newItem
+
+        override fun areContentsTheSame(oldItem: CourseModel, newItem: CourseModel): Boolean =
+            oldItem == newItem
+    }
+
     override fun onBindViewHolder(holder: CourseHolder, position: Int) {
-        holder.onBind(courseListFilter[position])
+        holder.onBind(getItem(position))
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchAdapter.CourseHolder {
@@ -51,16 +55,6 @@ open class SearchAdapter() :
         )
     }
 
-    override fun getItemCount(): Int {
-        return courseListFilter.size
-    }
-
-    @SuppressLint("NotifyDataSetChanged")
-    fun addData(list: List<CourseModel>?) {
-        courseList = list as ArrayList<CourseModel>
-        courseListFilter = courseList
-        notifyDataSetChanged()
-    }
 
     override fun getFilter(): Filter {
         return object : Filter() {

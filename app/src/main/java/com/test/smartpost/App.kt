@@ -13,7 +13,7 @@ class App : Application() {
         fbAuth = FirebaseAuth.getInstance()
     }
 
-    companion object{
+    companion object {
         lateinit var fbAuth: FirebaseAuth
         lateinit var authListener: FirebaseAuth.AuthStateListener
 

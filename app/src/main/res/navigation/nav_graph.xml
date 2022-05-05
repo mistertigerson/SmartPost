@@ -60,6 +60,8 @@
             app:destination="@id/courseFragment" />
         <argument
             android:name="personalModel"
+            app:nullable="true"
+            android:defaultValue="@null"
             app:argType="com.test.smartpost.domain.personals.models.PersonalModel" />
 
     </fragment>
@@ -81,7 +83,11 @@
         android:id="@+id/editPersonalFragment"
         android:name="com.test.smartpost.presentation.fragments.personalFragment.EditPersonalFragment"
         android:label="fragment_edit_personal"
-        tools:layout="@layout/fragment_edit_personal" />
+        tools:layout="@layout/fragment_edit_personal" >
+        <action
+            android:id="@+id/action_editPersonalFragment_to_personalFragment"
+            app:destination="@id/personalFragment" />
+    </fragment>
     <fragment
         android:id="@+id/courseFragment"
         android:name="com.test.smartpost.presentation.fragments.courseFragment.CourseFragment"

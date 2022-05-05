@@ -1,14 +1,15 @@
 package com.test.smartpost.presentation.fragments.secondRegistration
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -24,15 +25,19 @@ import com.test.smartpost.domain.personals.models.PersonalModel
 import dagger.hilt.android.AndroidEntryPoint
 
 
+const val APP_PREFERENCES = "APP_PREFERENCES"
+const val SHARED_EXPERIENCE = "experience"
+const val SHAREDetCareerDescription = "etCareerDescription"
+const val SHARED_NAME = "name"
+const val EMAIL = "email"
+
 @AndroidEntryPoint
 class SecondRegistrationFragment : Fragment(R.layout.fragment_second_registrarion) {
 
     private val binding: FragmentSecondRegistrarionBinding by viewBinding()
-
     private val viewModel: SecondRegisterViewModel by viewModels()
     private lateinit var adapterSecond: RegisterAdapter
-    private val bundle: Bundle = Bundle()
-
+    private lateinit var preferences: SharedPreferences
 
     private val registerForActivitySecond =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
@@ -45,6 +50,11 @@ class SecondRegistrationFragment : Fragment(R.layout.fragment_second_registrario
                 }
             }
         }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        preferences = requireActivity().getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE)
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -122,15 +132,18 @@ class SecondRegistrationFragment : Fragment(R.layout.fragment_second_registrario
             name = user?.displayName,
             email = user?.email.toString(),
         )
+        preferences.edit().putString(SHARED_EXPERIENCE, personalModel.experience)
+            .putString(SHAREDetCareerDescription, personalModel.etCareerDescription)
+            .putString(SHARED_NAME, personalModel.name)
+            .putString(EMAIL, personalModel.email)
+            .apply()
         val db = FirebaseFirestore.getInstance()
         db.collection("personal")
             .add(personalModel)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     findNavController().navigate(
-                        SecondRegistrationFragmentDirections.actionSecondRegistrationFragmentToPersonalFragment(
-                            personalModel
-                        )
+                        SecondRegistrationFragmentDirections.actionSecondRegistrationFragmentToPersonalFragment()
                     )
                     Toast.makeText(context, "success", Toast.LENGTH_SHORT).show()
                 } else {
@@ -139,5 +152,6 @@ class SecondRegistrationFragment : Fragment(R.layout.fragment_second_registrario
             }
 
     }
+
 
 }

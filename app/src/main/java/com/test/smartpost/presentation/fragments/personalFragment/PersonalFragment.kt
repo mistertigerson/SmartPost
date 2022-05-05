@@ -1,5 +1,7 @@
 package com.test.smartpost.presentation.fragments.personalFragment
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -13,14 +15,14 @@ import com.test.smartpost.R
 import com.test.smartpost.databinding.FragmentPersonalBinding
 import com.test.smartpost.domain.personals.models.PersonalModel
 import com.test.smartpost.extensions.loadImage
+import com.test.smartpost.presentation.fragments.secondRegistration.*
 
 
 class PersonalFragment : Fragment(R.layout.fragment_personal) {
 
     private val binding: FragmentPersonalBinding by viewBinding()
-    private val args: PersonalFragmentArgs by navArgs()
-    private lateinit var personalModel: PersonalModel
-    private lateinit var personalModel2: PersonalModel
+    private var args: PersonalFragmentArgs? = null
+    lateinit var preferences: SharedPreferences
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -37,18 +39,24 @@ class PersonalFragment : Fragment(R.layout.fragment_personal) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        args = arguments?.let { PersonalFragmentArgs.fromBundle(it) }
+        preferences = requireActivity().getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE)
+
     }
 
 
     private fun initModel() {
-        personalModel2 = args.personalModel.copy()
-        binding.tvProfession.text = personalModel2.experience
-        binding.tvCarrier.text = personalModel2.etCareerDescription
-        binding.tvEmail.text = personalModel2.email
-        binding.tvName.text = personalModel2.name
+        Log.e("TAG", "initModel: ${preferences.getString("experience", null)} ")
+        binding.tvProfession.text = preferences.getString(SHARED_EXPERIENCE, "null")
+        binding.tvCarrier.text = preferences.getString(SHAREDetCareerDescription, "null")
+        binding.tvEmail.text = preferences.getString(EMAIL, "null")
+        binding.tvName.text = preferences.getString(SHARED_NAME, "null")
+        binding.tvCity.text = preferences.getString(CITY, "null")
+        binding.tvContacts.text = preferences.getString(CONTACTS, "null")
+
+
         val user = FirebaseAuth.getInstance().currentUser
         binding.ivAvatar.loadImage(user?.photoUrl.toString())
-
 
     }
 }

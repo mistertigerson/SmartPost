@@ -25,7 +25,7 @@ class EducationFragmentViewModel @Inject constructor(private val getListCourseUs
 
     private fun getCourseList() {
         viewModelScope.launch {
-            getListCourseUseCase.getListCourse().collect(){
+            getListCourseUseCase.getListCourse().collect{
                 _getCourse.value = it
             }
         }
